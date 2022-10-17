@@ -1,8 +1,9 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib import messages
+from .models import Openings
 
 # Create your views here.
 def home(request):
@@ -52,7 +53,7 @@ def signin(request):
         if user is not None:
             login(request, user)
             # name = user.name
-            return render(request, "ApplicantTracking/index.html")
+            return render(request, "ApplicantTracking/dashboard.html")
 
         else:
             messages.error(request, "Bad Credentials!")
@@ -65,3 +66,14 @@ def signout(request):
     logout(request)
     messages.success(request, "Logged Out Successfully")
     return redirect('home')
+
+def opening(request):
+    op = Openings.objects.all()
+    context = {
+        'op': op
+    }
+    print(context)
+    return render(request, 'ApplicantTracking/openings.html', context)
+
+def dashboard(request):
+    return render(request, 'ApplicantTracking/dashboard.html')
