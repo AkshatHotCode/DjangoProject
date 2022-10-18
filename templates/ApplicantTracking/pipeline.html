@@ -1,24 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
-    <style>
-        .d1,.d2,.d3{
-        border:2px solid red;
-        padding:2px;
-        margin:auto;
-        text-align:right;
-        border-radius:10px;
-        background-color:#aba6a6;
-        color:white;
-        }
-
-
-    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
@@ -67,56 +55,49 @@
     </div>
 </nav>
 
+<div class="container">
+    <h1>Pipeline</h1>
 
-<div class="row">
-    <div class="col-md-3">
-
-    </div>
-    <div class="col-md-6">
-            <p>Sep 24 , 2022</p>
-            <h1>My WorkSpace</h1>
-        <br>
-            <p>Java is a popular programming language. Java is used to develop mobile apps,
-                web apps, desktop apps, games and much more.</p>
-        <br>
-            <div class="container first">
-                <div class="row">
-                    <div class="col-md-3 d1">
-                        <h4>24</h4>
-                        <p>Total Openings</p>
-                    </div>
-                    <div class="col-md-3 d1">
-                        <h4>20</h4>
-                        <p>Candidates</p>
-                    </div>
-                    <div class="col-md-3 d1">
-                        <h4>16</h4>
-                        <p>Pipelined</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="container first">
-                <div class="row">
-                    <div class="col-md-6 d1">
-                        <h4>24</h4>
-                        <p>Total Openings</p>
-                    </div>
-                    <div class="col-md-6 d2">
-                        <h4>20</h4>
-                        <p>Candidates</p>
-                    </div>
-                </div>
-
-            </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Candidate Name</th>
+            <th scope="col">Submitted Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Opening Title</th>
+            <th scope="col">OpeningID</th>
+            <th scope="col">Account Name</th>
+            <th scope="col">Opening Post Date</th>
+            <th scope="col">OpeningStatus</th>
+            <th scope="col">Sourced From</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Qualification</th>
+            <th scope="col">Email</th>
+        </tr>
+        </thead>
+        {% for pipe in pipe %}
+        <tbody>
+        <tr>
+            <th scope="row">{{op.id}}</th>
+            <td>{{op.CandidateName}}</td>
+            <td>{{op.SubmittedDate}}</td>
+            <td>{{op.Status}}</td>
+            <td>{{op.OpeningTitle}}</td>
+            <td>{{op.OpeningID}}</td>
+            <td>{{op.AccountName}}</td>
+            <td>{{op.OpeningPostDate}}</td>
+            <td>{{op.OpeningStatus}}</td>
+            <td>{{op.SourcedFrom}}</td>
+            <td>{{op.Mobile}}</td>
+            <td>{{op.Qualification}}</td>
+            <td>{{op.Email}}</td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
 
 
-    </div>
-    <div class="col-md-3">
-
-    </div>
 </div>
-
 </body>
 </html>

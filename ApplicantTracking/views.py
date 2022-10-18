@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .models import Openings
+from .models import Openings, Candidates, Pipeline, Placements
 
 # Create your views here.
 def home(request):
@@ -74,6 +74,30 @@ def opening(request):
     }
     print(context)
     return render(request, 'ApplicantTracking/openings.html', context)
+
+def candidates(request):
+    can = Candidates.objects.all()
+    context = {
+        'can': can
+    }
+    print(context)
+    return render(request, 'ApplicantTracking/candidates.html', context)
+
+def pipeline(request):
+    pipe = Pipeline.objects.all()
+    context = {
+        'pipe': pipe
+    }
+    print(context)
+    return render(request, 'ApplicantTracking/pipeline.html', context)
+
+def placement(request):
+    place = Placements.objects.all()
+    context = {
+        'place': place
+    }
+    print(context)
+    return render(request, 'ApplicantTracking/placement.html', context)
 
 def dashboard(request):
     return render(request, 'ApplicantTracking/dashboard.html')
