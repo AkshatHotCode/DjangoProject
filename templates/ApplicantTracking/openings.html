@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg" style="background-color: #FDF8F5">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">ATS</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -19,19 +19,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/dashboard" style="margin-left:450px;">Home</a>
+                    <a class="nav-link" aria-current="page" href="/dashboard" style="margin-left:450px; color:#504846">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/openings">Openings</a>
+                    <a class="nav-link" href="/openings" style="color:#504846">Openings</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/candidates">Candidates</a>
+                    <a class="nav-link" href="/candidates" style="color:#504846">Candidates</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/pipeline">Pipeline</a>
+                    <a class="nav-link" href="/pipeline" style="color:#504846">Pipeline</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/placement">Placements</a>
+                    <a class="nav-link" href="/placement" style="color:#504846">Placements</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -48,7 +48,7 @@
                     </ul>
                 </li>
                 <li class="nav-item" style="margin-left:425px;">
-                    <a class="nav-link" href="/signout" >SignOut</a>
+                    <a class="nav-link" href="/signout" style="color:#504846" >SignOut</a>
                 </li>
             </ul>
         </div>
@@ -56,7 +56,12 @@
 </nav>
 
 <div class="container">
-    <h1>Openings</h1>
+    <div class="row">
+        <div class="col-md-1" style="background-color: #FDF8F5">
+
+        </div>
+        <div class="col-md-10" style="background-color: #E8CEBF">
+            <h1 align="center">Openings</h1>
 
     <table class="table">
         <thead>
@@ -90,6 +95,12 @@
     </table>
 
 
+        </div>
+
+        <div class="col-md-1" style="background-color: #FDF8F5">
+
+        </div>
+    </div>
 </div>
 </body>
 </html>

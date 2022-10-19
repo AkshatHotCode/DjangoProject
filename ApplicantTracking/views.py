@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import Openings, Candidates, Pipeline, Placements
+import datetime
 
 # Create your views here.
 def home(request):
@@ -100,4 +101,9 @@ def placement(request):
     return render(request, 'ApplicantTracking/placement.html', context)
 
 def dashboard(request):
-    return render(request, 'ApplicantTracking/dashboard.html')
+    op = Openings.objects.all()
+    context = {
+        'op': op
+    }
+    print(context)
+    return render(request, 'ApplicantTracking/dashboard.html', context)

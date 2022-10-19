@@ -5,25 +5,30 @@
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
     <style>
         .d1,.d2,.d3{
-        border:2px solid red;
-        padding:2px;
+        border:2px solid black;
+        padding:10px;
         margin:auto;
         text-align:right;
         border-radius:10px;
-        background-color:#aba6a6;
-        color:white;
+        background-color:#FDF8F5;
+        color:#504846;
         }
-
-
+        .t1{
+        border:2px solid black;
+        text-align:right;
+        background-color:#FDF8F5;
+        color:#504846;
+        }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg" style="background-color: #FDF8F5">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">ATS</a>
+        <a class="navbar-brand">ATS</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,19 +36,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/dashboard" style="margin-left:450px;">Home</a>
+                    <a class="nav-link" aria-current="page" href="/dashboard" style="margin-left:450px;color:#504846">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/openings">Openings</a>
+                    <a class="nav-link" href="/openings" style="color:#504846">Openings</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/candidates">Candidates</a>
+                    <a class="nav-link" href="/candidates" style="color:#504846">Candidates</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/pipeline">Pipeline</a>
+                    <a class="nav-link" href="/pipeline" style="color:#504846">Pipeline</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/placement">Placements</a>
+                    <a class="nav-link" href="/placement" style="color:#504846">Placements</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -60,63 +65,142 @@
                     </ul>
                 </li>
                 <li class="nav-item" style="margin-left:425px;">
-                    <a class="nav-link" href="/signout" >SignOut</a>
+                    <a class="nav-link" href="/signout" style="color:#504846">SignOut</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-2" style="background-color: #FDF8F5">
 
-<div class="row">
-    <div class="col-md-3">
-
-    </div>
-    <div class="col-md-6">
-            <p>Sep 24 , 2022</p>
+        </div>
+        <div class="col-md-8" style="background-color: #E8CEBF">
+            <h4>18 October 2022</h4>
             <h1>My WorkSpace</h1>
-        <br>
+            <br>
             <p>Java is a popular programming language. Java is used to develop mobile apps,
                 web apps, desktop apps, games and much more.</p>
-        <br>
+            <br>
             <div class="container first">
                 <div class="row">
-                    <div class="col-md-3 d1">
+                    <div class="col-md-4 d1">
                         <h4>24</h4>
                         <p>Total Openings</p>
                     </div>
-                    <div class="col-md-3 d1">
+                    <div class="col-md-4 d2">
                         <h4>20</h4>
                         <p>Candidates</p>
                     </div>
-                    <div class="col-md-3 d1">
+                    <div class="col-md-4 d3">
                         <h4>16</h4>
                         <p>Pipelined</p>
                     </div>
                 </div>
 
             </div>
+            <br>
 
-            <div class="container first">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <canvas id="myChart"></canvas>
+                    <script>
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'Akshat'],
+        datasets: [{
+            label: ' of Votes',
+            data: [12, 19, 3, 5, 2, 3, 14],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                '#ffffff'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                '#ffffff'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+                    </script>
+                </div>
+            </div>
+            <br>
+
+            <div class="container first t1">
                 <div class="row">
-                    <div class="col-md-6 d1">
-                        <h4>24</h4>
-                        <p>Total Openings</p>
-                    </div>
-                    <div class="col-md-6 d2">
-                        <h4>20</h4>
-                        <p>Candidates</p>
+                    <div>
+                        <h3 class="text-center">Openings</h3>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Opening Title</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Pipelined</th>
+                                <th scope="col">Published Sites</th>
+                                <th scope="col">Primary Recruiter</th>
+                                <th scope="col">Priority</th>
+                                <th scope="col">Total Opening</th>
+                                <th scope="col">Postdate</th>
+                            </tr>
+                            </thead>
+                            {% for op in op %}
+                            <tbody>
+                            <tr>
+                                <th scope="row">{{op.id}}</th>
+                                <td>{{op.OpeningTitle}}</td>
+                                <td>{{op.Status}}</td>
+                                <td>{{op.Pipelined}}</td>
+                                <td>{{op.PublishedSites}}</td>
+                                <td>{{op.PrimaryRecruiter}}</td>
+                                <td>{{op.Priority}}</td>
+                                <td>{{op.TotalOpening}}</td>
+                                <td>{{op.PostDate}}</td>
+                            </tr>
+                            </tbody>
+                            {% endfor %}
+                        </table>
                     </div>
                 </div>
-
             </div>
 
 
-    </div>
-    <div class="col-md-3">
+        </div>
 
+        <div class="col-md-2" style="background-color: #FDF8F5">
+
+        </div>
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
 </body>
 </html>
