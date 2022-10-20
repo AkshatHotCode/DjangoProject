@@ -15,15 +15,15 @@
     ></script>
     <style>
     #idBody{
-    background-color:blue;
+    background-color:#FDF8F5;
     }
     .b1{
-        margin-top:180px;
-        background-color: deepskyblue;
+        margin-top:300px;
+        background-color: #E8CEBF;
     }
     .b2{
-        margin-top: 40px;
-        background-color: deepskyblue;
+        margin-top: 50px;
+        background-color: #E8CEBF;
     }
     .b3{
         margin-top: 190px;
@@ -53,8 +53,11 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8" align="center">
             <h2 class="b3">Welcome To Applicant Tracking System</h2>
+            <br>
+            <br>
+            <img src="https://www.vultus.com/wp-content/uploads/2020/04/VultusRecruitLogin.gif" alt="ATS Image" width="400" height="300" align="center">
         </div>
 
         {% if user.is_authenticated %}
@@ -67,9 +70,9 @@
 
         <div class="col-md-4">
 <!--        <button type="submit"><a href="/signup">SignUp</a></button>-->
-        <a class="btn btn-primary form-control b1" href="/signup">SignUp</a>
+        <a class="btn btn-primary form-control b1" href="/signup" style="color:#504846;">SignUp</a>
 <!--        <button type="submit"><a href="/signin">SignIn</a></button>-->
-        <a class="btn btn-primary form-control b2" href="/signin" type="submit">SignIn</a>
+        <a class="btn btn-primary form-control b2" href="/signin" type="submit" style="color:#504846;">SignIn</a>
         </div>
         {% endif %}
 

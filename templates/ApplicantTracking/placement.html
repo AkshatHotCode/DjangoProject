@@ -83,24 +83,24 @@
             <th scope="col">PlacedOn</th>
         </tr>
         </thead>
-        {% for pipe in pipe %}
+        {% for place in place %}
         <tbody>
         <tr>
-            <th scope="row">{{op.id}}</th>
-            <td>{{op.PlacementName}}</td>
-            <td>{{op.BillRate}}</td>
-            <td>{{op.CandidateName}}</td>
-            <td>{{op.OpeningTitle}}</td>
-            <td>{{op.EndClient}}</td>
-            <td>{{op.ProjectEndDate}}</td>
-            <td>{{op.ProjectStartDate}}</td>
-            <td>{{op.SourcedFrom}}</td>
-            <td>{{op.NetMargin}}</td>
-            <td>{{op.SalesMargin}}</td>
-            <td>{{op.OpeningID}}</td>
-            <td>{{op.Status}}</td>
-            <td>{{op.PlacedBy}}</td>
-            <td>{{op.PlacedOn}}</td>
+            <th scope="row">{{place.id}}</th>
+            <td>{{place.PlacementName}}</td>
+            <td>{{place.BillRate}}</td>
+            <td>{{place.CandidateName}}</td>
+            <td>{{place.OpeningTitle}}</td>
+            <td>{{place.EndClient}}</td>
+            <td>{{place.ProjectEndDate}}</td>
+            <td>{{place.ProjectStartDate}}</td>
+            <td>{{place.SourcedFrom}}</td>
+            <td>{{place.NetMargin}}</td>
+            <td>{{place.SalesMargin}}</td>
+            <td>{{place.OpeningID}}</td>
+            <td>{{place.Status}}</td>
+            <td>{{place.PlacedBy}}</td>
+            <td>{{place.PlacedOn}}</td>
         </tr>
         </tbody>
         {% endfor %}
