@@ -11,5 +11,11 @@ urlpatterns = [
     path('candidates', views.candidates, name="candidates"),
     path('pipeline', views.pipeline, name="pipeline"),
     path('placement', views.placement, name="placement"),
-    path('dashboard', views.dashboard, name="dashboard")
+    path('account', views.account, name="account"),
+    path('dashboard', views.dashboard, name="dashboard"),
+    path('addopenings', views.addopenings, name="addopenings"),
+    path('addcandidates', views.addcandidates, name="addcandidates"),
+    path('addpipeline', views.addpipeline, name="addpipeline"),
+    path('addplacement', views.addplacement, name="addplacement"),
+    path('addaccount', views.addaccount, name="addaccount"),
 ]

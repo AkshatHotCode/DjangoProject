@@ -3,15 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>ATS-Pipeline</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        #aknav:hover{
+        background-color:#0077b6;
+        }
+    </style>
+
 
 </head>
-<body>
-<nav class="navbar navbar-expand-lg bg-light">
+<body style="background-color: #03045e;">
+<nav class="navbar navbar-expand-lg" style="background-color: #03045e">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">ATS</a>
+        <a class="navbar-brand" style="color:#caf0f8;">ATS</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -19,51 +25,44 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/dashboard" style="margin-left:450px;">Home</a>
+                    <a class="nav-link" aria-current="page" href="/dashboard" style="margin-left:450px;color:#caf0f8" id="aknav">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/openings">Openings</a>
+                    <a class="nav-link" href="/openings" style="color:#caf0f8" id="aknav">Openings</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/candidates">Candidates</a>
+                    <a class="nav-link" href="/candidates" style="color:#caf0f8" id="aknav">Candidates</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/pipeline">Pipeline</a>
+                    <a class="nav-link" href="/pipeline" style="color:#caf0f8" id="aknav">Pipeline</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/placement">Placements</a>
+                    <a class="nav-link" href="/placement" style="color:#caf0f8" id="aknav">Placements</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="/account" style="color:#caf0f8" id="aknav">Account</a>
                 </li>
-                <li class="nav-item" style="margin-left:425px;">
-                    <a class="nav-link" href="/signout" >SignOut</a>
+                <li class="nav-item" style="margin-left:450px;">
+                    <a class="nav-link" href="/signout" style="color:#caf0f8" id="aknav">SignOut</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="container">
+<div class="container" style="text-align:center;">
     <div class="row">
-        <div class="col-md-0" style="background-color: #FDF8F5">
+        <div class="col-md-0" style="background-color: #03045e">
 
         </div>
-        <div class="col-md-12" style="background-color: #E8CEBF">
+        <div class="col-md-12" style="background-color: #00b4d8">
+            <br>
             <h1 align="center">Pipeline</h1>
+            <br>
+            <a href="/addpipeline" class="btn btn-primary" role="button">Add Pipeline</a>
+            <hr>
 
-    <table class="table">
+    <table class="table table-bordered" style="border-color:black;">
         <thead>
         <tr>
             <th scope="col">#</th>
@@ -71,7 +70,6 @@
             <th scope="col">Submitted Date</th>
             <th scope="col">Status</th>
             <th scope="col">Opening Title</th>
-            <th scope="col">OpeningID</th>
             <th scope="col">Account Name</th>
             <th scope="col">Opening Post Date</th>
             <th scope="col">OpeningStatus</th>
@@ -89,7 +87,6 @@
             <td>{{pipe.SubmittedDate}}</td>
             <td>{{pipe.Status}}</td>
             <td>{{pipe.OpeningTitle}}</td>
-            <td>{{pipe.OpeningID}}</td>
             <td>{{pipe.AccountName}}</td>
             <td>{{pipe.OpeningPostDate}}</td>
             <td>{{pipe.OpeningStatus}}</td>
@@ -105,7 +102,7 @@
 
         </div>
 
-        <div class="col-md-0" style="background-color: #FDF8F5">
+        <div class="col-md-0" style="background-color: #03045e">
 
         </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ATS-Placements</title>
+    <title>ATS-Accounts</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <style>
@@ -11,6 +11,8 @@
         background-color:#0077b6;
         }
     </style>
+
+</head>
 </head>
 <body style="background-color: #03045e;">
 <nav class="navbar navbar-expand-lg" style="background-color: #03045e">
@@ -50,51 +52,41 @@
 
 <div class="container" style="text-align:center;">
     <div class="row">
-        <div class="col-md-0" style="background-color: #03045e">
+        <div class="col-md-1" style="background-color: #03045e">
 
         </div>
-        <div class="col-md-12" style="background-color: #00b4d8">
-            <h1 align="center">Placements</h1>
+        <div class="col-md-10" style="background-color: #00b4d8">
+            <h1 align="center">Account</h1>
             <br>
-            <a href="/addplacement" class="btn btn-primary" role="button">Add Placement</a>
+            <a href="/addaccount" class="btn btn-primary" role="button">Add Pipeline</a>
             <hr>
 
     <table class="table table-bordered" style="border-color:black;">
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Placement Name</th>
-            <th scope="col">Bill Rate</th>
-            <th scope="col">Candidate Name</th>
-            <th scope="col">Opening Title</th>
-            <th scope="col">End Client</th>
-            <th scope="col">Project End Date</th>
-            <th scope="col">Project Start Date</th>
-            <th scope="col">Sourced From</th>
-            <th scope="col">Net Margin</th>
-            <th scope="col">Sales Margin</th>
+            <th scope="col">Name</th>
+            <th scope="col">Account Owner</th>
+            <th scope="col">Account Code</th>
+            <th scope="col">Category</th>
+            <th scope="col">Access</th>
             <th scope="col">Status</th>
-            <th scope="col">PlacedBy</th>
-            <th scope="col">PlacedOn</th>
+            <th scope="col">Phone</th>
+            <th scope="col">State</th>
         </tr>
         </thead>
-        {% for place in place %}
+        {% for acc in acc %}
         <tbody>
         <tr>
-            <th scope="row">{{place.id}}</th>
-            <td>{{place.PlacementName}}</td>
-            <td>{{place.BillRate}}</td>
-            <td>{{place.CandidateName}}</td>
-            <td>{{place.OpeningTitle}}</td>
-            <td>{{place.EndClient}}</td>
-            <td>{{place.ProjectEndDate}}</td>
-            <td>{{place.ProjectStartDate}}</td>
-            <td>{{place.SourcedFrom}}</td>
-            <td>{{place.NetMargin}}</td>
-            <td>{{place.SalesMargin}}</td>
-            <td>{{place.Status}}</td>
-            <td>{{place.PlacedBy}}</td>
-            <td>{{place.PlacedOn}}</td>
+            <th scope="row">{{acc.id}}</th>
+            <td>{{acc.Name}}</td>
+            <td>{{acc.AccountOwner}}</td>
+            <td>{{acc.AccountCode}}</td>
+            <td>{{acc.Category}}</td>
+            <td>{{acc.Access}}</td>
+            <td>{{acc.Status}}</td>
+            <td>{{acc.Phone}}</td>
+            <td>{{acc.State}}</td>
         </tr>
         </tbody>
         {% endfor %}
@@ -103,7 +95,7 @@
 
         </div>
 
-        <div class="col-md-0" style="background-color: #03045e">
+        <div class="col-md-1" style="background-color: #03045e">
 
         </div>
     </div>

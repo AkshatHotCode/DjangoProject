@@ -34,12 +34,11 @@ class Pipeline(models.Model):
     SubmittedDate = models.DateField()
     Status = models.CharField(max_length=50)
     OpeningTitle = models.CharField(max_length=50)
-    OpeningID = models.CharField(max_length=10)
     AccountName = models.CharField(max_length=50)
     OpeningPostDate = models.DateField()
     OpeningStatus = models.CharField(max_length=50)
     SourcedFrom = models.CharField(max_length=50)
-    Mobile = models.IntegerField(max_length=15)
+    Mobile = models.IntegerField()
     Qualification = models.CharField(max_length=150)
     Email = models.EmailField(max_length=50)
 
@@ -57,10 +56,22 @@ class Placements(models.Model):
     SourcedFrom = models.CharField(max_length=50)
     NetMargin = models.CharField(max_length=50)
     SalesMargin = models.CharField(max_length=50)
-    OpeningID = models.CharField(max_length=10)
     Status = models.CharField(max_length=50)
     PlacedBy = models.CharField(max_length=50)
     PlacedOn = models.CharField(max_length=50)
 
     def __str__(self):
         return "%s %s %s" %(self.CandidateName, self.PlacementName, self.OpeningTitle)
+
+class Account(models.Model):
+    Name = models.CharField(max_length=100)
+    AccountOwner = models.CharField(max_length=100)
+    AccountCode = models.CharField(max_length=100)
+    Category = models.CharField(max_length=100)
+    Access = models.CharField(max_length=100)
+    Status = models.CharField(max_length=100)
+    Phone = models.CharField(max_length=100)
+    State = models.CharField(max_length=100)
+
+    def __str__(self):
+        return "%s %s %s" %(self.Name, self.AccountOwner, self.Status)
